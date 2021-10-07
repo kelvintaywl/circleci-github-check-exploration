@@ -1,17 +1,33 @@
 version: 2.1
 
 jobs:
-  echo:
+  foo:
     docker:
       - image: cimg/base:stable
     steps:
-      - run:
-          name: Greet
-          command: echo "I love ${COLOR} builds."
-          environment:
-            COLOR: "green"
+      - run: echo "I am Foo"
+  bar:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run: echo "I am Bar"
+  test:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run: echo "Tests...."
+  lint:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run: echo "Lint check..."
 
 workflows:
-  main:
+  ci:
     jobs:
-      - echo
+      - foo
+      - bar:
+          requires:
+            - foo
+      - test
+      - lint
