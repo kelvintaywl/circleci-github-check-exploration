@@ -1,1 +1,17 @@
 # Exploring CircleCI + GitHub Check
+
+We have the following workflow named `ci` on CircleCI.
+
+`test` and `lint` jobs are the jobs we deemed necessary to pass before any GitHub pull requests (PRs) can be merged.
+
+As a solution, I added a "catch-these-necessary-jobs" surrogate Job named `github_status_checked` that requires `test` and `lint`.
+> See [config.yml here](.circleci/config.yml)
+
+<img width="773" alt="Screen Shot 2021-10-07 at 9 49 26" src="https://user-images.githubusercontent.com/2164346/136303291-13f27cd3-04f1-4283-825c-57d7b3886b6b.png">
+
+
+[Link to actual build on CircleCI](https://app.circleci.com/pipelines/github/kelvintaywl/circleci-github-check-exploration/3/workflows/cc620e08-241d-45d5-b4ae-afb5b7c0e809)
+
+You can also see the branch protection rule on this project's GitHub settings.
+
+<img width="1552" alt="Screen Shot 2021-10-07 at 9 45 01" src="https://user-images.githubusercontent.com/2164346/136303301-db8e4c5e-bbd8-48fa-96d5-75949bb5bb20.png">
