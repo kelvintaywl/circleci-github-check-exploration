@@ -14,4 +14,8 @@ As a solution, I added a "catch-these-necessary-jobs" surrogate Job named `githu
 
 You can also see the branch protection rule on this project's GitHub settings.
 
-<img width="1552" alt="Screen Shot 2021-10-07 at 9 45 01" src="https://user-images.githubusercontent.com/2164346/136303301-db8e4c5e-bbd8-48fa-96d5-75949bb5bb20.png">
+> Note that I've used `*` for the branch name pattern; 
+> You can adjust this to fit your needs (e.g., `pr/*` if your team has a branch naming convention that all PRs are prefixed with `pr/`)
+
+<img width="1552" alt="Screen Shot 2021-10-07 at 9 53 45" src="https://user-images.githubusercontent.com/2164346/136303551-a6ccea99-e211-4a96-aaf2-e5bc6c440c81.png">
+
