@@ -21,6 +21,15 @@ jobs:
       - image: cimg/base:stable
     steps:
       - run: echo "Lint check..."
+  github_status_checked:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: Indicate GitHub PR passed required checks
+          command: |
+            echo "All required checks done!"
+            echo "This indicates this commit on Github (likely a PR) is good to go"
 
 workflows:
   ci:
@@ -31,3 +40,8 @@ workflows:
             - foo
       - test
       - lint
+      - github_status_checked:
+          requires:
+            - test
+            - lint
+
