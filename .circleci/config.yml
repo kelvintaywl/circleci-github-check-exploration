@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - run: "We love emojis. 🧹 "
+      - run: echo "We love emojis. 🧹 "
   foo:
     docker:
       - image: cimg/base:stable
