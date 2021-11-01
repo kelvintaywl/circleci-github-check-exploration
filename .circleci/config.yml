@@ -2,7 +2,6 @@ version: 2.1
 
 jobs:
   emoji:
-    name: "🧹 Emoji"
     docker:
       - image: cimg/base:stable
     steps:
@@ -40,7 +39,8 @@ jobs:
 workflows:
   ci:
     jobs:
-      - emoji
+      - emoji:
+          name: "🧹 Emoji"
       - foo
       - bar:
           requires:
