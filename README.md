@@ -22,3 +22,5 @@ You can also see the branch protection rule on this project's GitHub settings.
 A subsequent PR (#2) reveals that the required `github_status_checked` job on CircleCI passed and therefore is good to merge.
 
 <img width="1552" alt="Screen Shot 2021-10-07 at 9 57 54" src="https://user-images.githubusercontent.com/2164346/136304138-978ec546-b7cb-428c-b74c-3f97bc76e3dc.png">
+
+I have also added a new job, `emoji` that prints itself with an emoji to see how this behaves for CircleCI -> GitHub webhooks for job statuses.
